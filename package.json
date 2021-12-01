@@ -1,0 +1,72 @@
+{
+  "name": "@brixtol/country-continent",
+  "version": "1.0.0",
+  "description": "Mappings for 2 letter (Alpha 2) country codes to Continent code/name",
+  "author": {
+    "name": "Νίκος Σαβίδης ",
+    "email": "n@brixtol.com",
+    "url": "https://brixtoltextiles.com"
+  },
+  "license": "MIT",
+  "main": "./package/index.js",
+  "exports": {
+    "require": "./package/index.js",
+    "import": "./package/index.es.js"
+  },
+  "types": "./package/index.d.ts",
+  "keywords": [
+    "countries",
+    "mappings",
+    "continents",
+    "country",
+    "3166-1 alpha-2",
+    "ISO 36166"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brixtol/country-continent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brixtol/country-continent"
+  },
+  "node": {},
+  "engines": {
+    "pnpm": ">=5"
+  },
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c --environment prod",
+    "package": "cd versions; pnpm pack ../ && cd ..",
+    "test": "ava --watch --verbose",
+    "test:build": "ava --verbose"
+  },
+  "prettier": "@brixtol/prettier-config",
+  "eslintConfig": {
+    "ignorePatterns": "package",
+    "extends": "@brixtol/eslint-config",
+    "rules": {
+      "no-unused-vars": "off"
+    }
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "files": [
+      "test/*.js"
+    ],
+    "concurrency": 5
+  },
+  "devDependencies": {
+    "@brixtol/eslint-config": "^1.0.1",
+    "@brixtol/prettier-config": "^1.2.1",
+    "@brixtol/rollup-config": "^1.4.0",
+    "@brixtol/tsconfig": "^1.0.0",
+    "ava": "^3.15.0",
+    "esm": "^3.2.25",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@brixtol/tsutils": "^1.4.1"
+  }
+}
